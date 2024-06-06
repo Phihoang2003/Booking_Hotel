@@ -8,5 +8,16 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: 'true'
+  servlet:
+    multipart:
+    max-file-size: 5MB
+    max-request-size: 5MB
+    file-size-threshold: 2KB
+security:
+  jwt:
+    secret-key: 36763979244226452948404D635166546A576D5A7134743777217A25432A462D
+  token:
+    expirationInMils: 3600000
+    jwtSecret: 36763979244226452948404D635166546A576D5A7134743777217A25432A462D
 server:
   port: '8082'

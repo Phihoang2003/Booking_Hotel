@@ -19,10 +19,10 @@ import java.util.List;
 @Component
 public class JwtUtils {
     private static Logger logger= LoggerFactory.getLogger(JwtUtils.class);
-    @Value("${lakeside.secret.jwtSecret}")
+   @Value("${security.jwt.secret-key}")
     private String jwtSecret;
 
-    @Value("${auth.token.expirationInMils}")
+    @Value("${security.token.expirationInMils}")
     private int jwtExpirationMs;
 
     public String generateJwtTokenForUser(Authentication authentication){
