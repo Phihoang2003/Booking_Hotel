@@ -4,12 +4,13 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.commons.lang3.RandomStringUtils;
+
 
 import java.math.BigDecimal;
 import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Entity
 @Getter
@@ -38,7 +39,7 @@ public class Room {
         bookings.add(booking);
         booking.setRoom(this);
         isBooked=true;
-        String bookingCode = RandomStringUtils.randomNumeric(10);
+        String bookingCode = "BK" + new Random().nextInt(1000);
         booking.setBookingConfirmationCode(bookingCode);
     }
 
